@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "galedo-landing": {
+    "guillermo-aledo-landing": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -60,10 +60,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "galedo-landing:build:production"
+              "buildTarget": "guillermo-aledo-landing:build:production"
             },
             "development": {
-              "buildTarget": "galedo-landing:build:development"
+              "buildTarget": "guillermo-aledo-landing:build:development"
             }
           },
           "defaultConfiguration": "development"
