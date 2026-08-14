@@ -1,0 +1,230 @@
+:host {
+  display: block;
+}
+
+.hero {
+  display: grid;
+  min-height: 100svh;
+  align-items: center;
+  padding: clamp(4.5rem, 10vh, 7.5rem) var(--section-padding-inline);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.hero__layout {
+  display: grid;
+  width: min(100%, var(--content-max-width));
+  margin: 0 auto;
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--color-divider);
+  grid-template-columns: minmax(0, 3fr) minmax(13rem, 1fr);
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.hero__layout::before {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: calc(clamp(2rem, 5vw, 3.5rem) * -1 - 0.25rem);
+  background-color: var(--color-accent);
+  content: "";
+  grid-column: 1 / -1;
+}
+
+.hero__content {
+  align-self: center;
+}
+
+h1 {
+  max-width: 15ch;
+  margin: 0;
+  font-size: clamp(3rem, 6.5vw, 5.75rem);
+  font-weight: 650;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+h1 span {
+  color: var(--color-brand);
+}
+
+.hero__content > p {
+  max-width: 46rem;
+  margin: 2rem 0 0;
+  color: var(--color-text-secondary);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.button--primary {
+  background-color: var(--color-text);
+  color: var(--color-surface);
+}
+
+.button--primary:hover {
+  background-color: var(--color-brand);
+}
+
+.button--secondary {
+  border-color: #aab2ae;
+  color: var(--color-text);
+}
+
+.button--secondary:hover {
+  border-color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
+.hero__summary {
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: clamp(1.5rem, 3vw, 2.5rem);
+  border-left: 1px solid var(--color-divider);
+}
+
+.hero__experience {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.hero__experience strong {
+  color: var(--color-brand);
+  font-size: clamp(4.5rem, 7vw, 7rem);
+  font-weight: 500;
+  line-height: 0.9;
+}
+
+.hero__experience span,
+.hero__stack {
+  color: var(--color-text-secondary);
+  font-family: "Courier New", ui-monospace, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.hero__experience span {
+  max-width: 12ch;
+}
+
+.hero__stack {
+  margin: 3rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-divider);
+}
+
+@media (max-width: 52rem) {
+  .hero__layout {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .hero__summary {
+    display: grid;
+    align-items: end;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--color-divider);
+    border-left: 0;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .hero__experience {
+    grid-template-columns: auto 8rem;
+    align-items: end;
+    gap: 0.75rem;
+  }
+
+  .hero__experience strong {
+    font-size: 4rem;
+  }
+
+  .hero__experience span {
+    padding-bottom: 0.2rem;
+  }
+
+  .hero__stack {
+    margin: 0;
+    padding: 0 0 0.2rem;
+    border-top: 0;
+    text-align: right;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .hero {
+    min-height: 100svh;
+    padding-block: 3rem;
+  }
+
+  .hero__layout {
+    padding-top: 2rem;
+    gap: 3rem;
+  }
+
+  .hero__layout::before {
+    margin-top: -2.25rem;
+  }
+
+  h1 {
+    font-size: clamp(2.65rem, 13vw, 3.5rem);
+  }
+
+  .hero__content > p {
+    margin-top: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .hero__actions {
+    display: grid;
+    margin-top: 2rem;
+  }
+
+  .hero__summary {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .hero__experience {
+    grid-template-columns: auto 1fr;
+  }
+
+  .hero__stack {
+    max-width: 24rem;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}

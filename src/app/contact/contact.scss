@@ -1,0 +1,199 @@
+:host {
+  display: block;
+}
+
+.contact {
+  padding: var(--section-padding-block) var(--section-padding-inline) clamp(3rem, 6vw, 5rem);
+  background-color: var(--color-text);
+  color: var(--color-background);
+}
+
+.contact__layout {
+  width: min(100%, var(--content-max-width));
+  margin: 0 auto;
+}
+
+.contact__header {
+  display: grid;
+  align-items: baseline;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #44504a;
+  grid-template-columns: minmax(7rem, 1fr) 3fr;
+  gap: clamp(2rem, 8vw, 8rem);
+}
+
+.contact__number,
+.contact__header p,
+.contact__action > span {
+  font-family: "Courier New", ui-monospace, monospace;
+}
+
+.contact__number {
+  color: #5ac8a2;
+  font-size: 0.875rem;
+}
+
+.contact__header p {
+  margin: 0;
+  color: #aeb8b3;
+  font-size: 0.75rem;
+}
+
+.contact__main {
+  display: grid;
+  padding: clamp(3rem, 7vw, 6rem) 0;
+  grid-template-columns: minmax(0, 1.7fr) minmax(17rem, 1fr);
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 550;
+  line-height: 0.95;
+}
+
+.contact__intro {
+  max-width: 38rem;
+  margin: 2rem 0 0;
+  color: #c8d0cc;
+  font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.contact__action {
+  display: flex;
+  align-self: end;
+  flex-direction: column;
+  padding-left: clamp(1.5rem, 3vw, 2.5rem);
+  border-left: 1px solid #44504a;
+}
+
+.contact__action > span {
+  margin-bottom: 1rem;
+  color: #aeb8b3;
+  font-size: 0.6875rem;
+}
+
+.contact__email {
+  display: inline-flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid var(--color-brand);
+  border-radius: 0.375rem;
+  background-color: var(--color-brand);
+  color: var(--color-surface);
+  font-weight: 650;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.contact__email:hover {
+  border-color: #0a956b;
+  background-color: #0a956b;
+}
+
+.contact__email:focus-visible,
+.contact__footer a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.contact__action small {
+  margin-top: 0.75rem;
+  color: #8f9b95;
+  font-family: "Courier New", ui-monospace, monospace;
+  font-size: 0.6875rem;
+  overflow-wrap: anywhere;
+}
+
+.contact__footer {
+  display: grid;
+  align-items: end;
+  padding-top: 2rem;
+  border-top: 1px solid #44504a;
+  grid-template-columns: 1.5fr 1fr;
+  gap: clamp(2rem, 8vw, 8rem);
+}
+
+.contact__footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.75rem;
+}
+
+.contact__footer a {
+  padding-block: 0.25rem;
+  border-bottom: 1px solid #5ac8a2;
+  color: var(--color-background);
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.contact__footer a:hover {
+  border-color: var(--color-background);
+  color: #5ac8a2;
+}
+
+.contact__freelance {
+  max-width: 26rem;
+  margin: 0;
+  color: #8f9b95;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 48rem) {
+  .contact__header {
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact__main,
+  .contact__footer {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__action {
+    padding: 2rem 0 0;
+    border-top: 1px solid #44504a;
+    border-left: 0;
+  }
+
+  .contact__email {
+    align-self: start;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .contact {
+    padding-block: 5rem 3rem;
+  }
+
+  .contact__header {
+    align-items: start;
+  }
+
+  .contact__main {
+    padding-block: 3rem;
+  }
+
+  .contact__email {
+    align-self: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__email,
+  .contact__footer a {
+    transition: none;
+  }
+}
