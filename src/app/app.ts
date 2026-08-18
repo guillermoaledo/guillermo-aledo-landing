@@ -3,6 +3,7 @@ import { ContactComponent } from './contact/contact';
 import { ExperienceComponent } from './experience/experience';
 import { HeroComponent } from './hero/hero';
 import { ProfessionalProfileComponent } from './professional-profile/professional-profile';
+import { ProjectsComponent } from './projects/projects';
 import { TechnicalCapabilitiesComponent } from './technical-capabilities/technical-capabilities';
 import { WorkingApproachComponent } from './working-approach/working-approach';
 
@@ -13,6 +14,7 @@ import { WorkingApproachComponent } from './working-approach/working-approach';
     ProfessionalProfileComponent,
     ExperienceComponent,
     TechnicalCapabilitiesComponent,
+    ProjectsComponent,
     WorkingApproachComponent,
     ContactComponent,
   ],

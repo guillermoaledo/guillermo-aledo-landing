@@ -1,0 +1,53 @@
+<section class="projects" id="proyectos" aria-labelledby="projects-title">
+  <div class="projects__layout">
+    <header class="projects__header">
+      <span class="projects__number" aria-hidden="true">04</span>
+      <div>
+        <h2 id="projects-title">Proyectos destacados</h2>
+        <p>
+          Aplicaciones propias donde llevo las decisiones técnicas desde la idea hasta el
+          despliegue.
+        </p>
+      </div>
+    </header>
+
+    <div class="projects__list">
+      @for (project of projects; track project.name) {
+        <article class="project">
+          <span class="project__index" aria-hidden="true">{{ project.index }}</span>
+
+          <div class="project__body">
+            <h3>{{ project.name }}</h3>
+            <p class="project__description">{{ project.description }}</p>
+            <p class="project__highlight">{{ project.highlight }}</p>
+
+            <ul class="project__technologies" aria-label="Tecnologías utilizadas">
+              @for (technology of project.technologies; track technology) {
+                <li>{{ technology }}</li>
+              }
+            </ul>
+          </div>
+
+          <div class="project__actions" aria-label="Enlaces de {{ project.name }}">
+            <a
+              class="project__link project__link--primary"
+              [href]="project.demoUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver proyecto <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="project__link"
+              [href]="project.repositoryUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver código <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
