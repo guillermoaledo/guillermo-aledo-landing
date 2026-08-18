@@ -1,25 +1,25 @@
 {
-  "hash": "e1945324",
-  "configHash": "89fc9ddd",
-  "lockfileHash": "d5a6a43e",
-  "browserHash": "bcb55a5b",
+  "hash": "4d005e58",
+  "configHash": "b7d58406",
+  "lockfileHash": "f5556017",
+  "browserHash": "3c371335",
   "optimized": {
     "@angular/core": {
-      "src": "../../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "0b83976a",
+      "fileHash": "5168078f",
       "needsInterop": false
     },
     "@angular/platform-browser": {
-      "src": "../../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "019f4611",
+      "fileHash": "7f062cdb",
       "needsInterop": false
     }
   },
   "chunks": {
-    "core-lKntSPHF": {
-      "file": "core-lKntSPHF.js",
+    "core-DRqh4kcY": {
+      "file": "core-DRqh4kcY.js",
       "isDynamicEntry": false
     }
   }
