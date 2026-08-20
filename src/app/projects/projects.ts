@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 interface Project {
   readonly index: string;
@@ -14,6 +14,7 @@ interface Project {
   selector: 'app-projects',
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent {
   protected readonly projects: readonly Project[] = [

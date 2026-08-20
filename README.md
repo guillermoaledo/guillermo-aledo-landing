@@ -1,59 +1,87 @@
-# Guillermo Aledo Landing
+# Portfolio de Guillermo Aledo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.4.
+Portfolio profesional desarrollado con Angular para presentar mi perfil, experiencia, capacidades
+técnicas, proyectos destacados y vías de contacto.
 
-## Development server
+## Tecnologías
 
-To start a local development server, run:
+- Angular 22
+- TypeScript
+- SCSS
+- Vitest y jsdom para pruebas unitarias
 
-```bash
-ng serve
-```
+La aplicación utiliza componentes independientes (*standalone*) y estrategia de detección de
+cambios `OnPush`.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Requisitos
 
-## Code scaffolding
+- Node.js `^22.22.3`, `^24.15.0` o `>=26.0.0`
+- npm 11
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Las versiones de Node.js anteriores, incluida la versión 20, no son compatibles con la versión de
+Angular CLI utilizada por el proyecto.
 
-```bash
-ng generate component component-name
-```
+## Instalación
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Instala las dependencias respetando el archivo de bloqueo:
 
 ```bash
-ng build
+npm ci
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Desarrollo local
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Inicia el servidor de desarrollo:
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+La aplicación estará disponible en `http://localhost:4200/` y se recargará cuando se modifique el
+código fuente.
 
-For end-to-end (e2e) testing, run:
+## Pruebas
+
+Ejecuta las pruebas unitarias una sola vez:
 
 ```bash
-ng e2e
+npm test -- --watch=false
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Las pruebas comprueban la creación del componente raíz, las secciones principales, la fecha de
+inicio de la experiencia profesional y el renderizado de proyectos y enlaces de contacto.
 
-## Additional Resources
+## Build de producción
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Genera una compilación optimizada:
+
+```bash
+npm run build
+```
+
+Los archivos generados se guardan en `dist/guillermo-aledo-landing/browser/`.
+
+## Estructura principal
+
+```text
+public/                 Recursos públicos, incluido el favicon
+src/
+  app/                  Componentes y pruebas de la aplicación
+  index.html            Metadatos, título y configuración del documento
+  styles.scss           Estilos globales
+```
+
+## Características técnicas
+
+- Diseño responsive sin librerías visuales externas.
+- HTML semántico y asociaciones mediante `aria-labelledby`.
+- Enlaces externos protegidos con `rel="noopener noreferrer"`.
+- Preferencia `prefers-reduced-motion` respetada en las animaciones.
+- Metadatos SEO, Open Graph y Twitter/X.
+- Favicon SVG tipográfico servido desde `public/`.
+
+## Despliegue
+
+El repositorio no incluye actualmente una automatización de despliegue. El contenido generado en
+`dist/guillermo-aledo-landing/browser/` puede publicarse en cualquier alojamiento de archivos
+estáticos configurado para una aplicación Angular.
