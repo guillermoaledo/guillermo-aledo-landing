@@ -45,7 +45,7 @@ describe('App', () => {
     expect(experienceText).toContain('desde julio de 2023');
   });
 
-  it('should render every featured project with demo and repository links', () => {
+  it('should render Nexo as the featured project in development', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
 
@@ -53,16 +53,10 @@ describe('App', () => {
       (fixture.nativeElement as HTMLElement).querySelectorAll('#proyectos article'),
     );
 
-    expect(projects).toHaveLength(3);
-    for (const project of projects) {
-      const links = project.querySelectorAll<HTMLAnchorElement>('a[target="_blank"]');
-      expect(links).toHaveLength(2);
-      for (const link of links) {
-        expect(link.href).toMatch(/^https:\/\//);
-        expect(link.rel).toContain('noopener');
-        expect(link.rel).toContain('noreferrer');
-      }
-    }
+    expect(projects).toHaveLength(1);
+    expect(projects[0].textContent).toContain('Nexo');
+    expect(projects[0].textContent).toContain('En desarrollo');
+    expect(projects[0].querySelectorAll('a')).toHaveLength(0);
   });
 
   it('should render the configured contact links', () => {
