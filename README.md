@@ -80,8 +80,18 @@ src/
 - Metadatos SEO, Open Graph y Twitter/X.
 - Favicon SVG tipográfico servido desde `public/`.
 
-## Despliegue
+## Despliegue en Cloudflare Pages
 
-El repositorio no incluye actualmente una automatización de despliegue. El contenido generado en
-`dist/guillermo-aledo-landing/browser/` puede publicarse en cualquier alojamiento de archivos
-estáticos configurado para una aplicación Angular.
+El proyecto está preparado para desplegarse desde GitHub en Cloudflare Pages.
+
+1. Crea un proyecto de Pages y conecta el repositorio.
+2. Selecciona `main` como rama de producción.
+3. Configura `npm run build` como comando de compilación.
+4. Indica `dist/guillermo-aledo-landing/browser` como directorio de salida.
+5. Cloudflare detectará `.node-version` y usará Node.js 24.21.0.
+6. Tras comprobar el subdominio `*.pages.dev`, añade `guillermoaledo.com` y
+   `www.guillermoaledo.com` en **Custom domains**. Configura una redirección permanente de
+   `www` al dominio principal.
+
+Los archivos `robots.txt`, `sitemap.xml` y `_headers` se incluyen en la salida de producción para
+facilitar la indexación y aplicar cabeceras de seguridad básicas.
