@@ -78,4 +78,20 @@ describe('App', () => {
     expect(linkedIn?.rel).toContain('noopener');
     expect(github?.rel).toContain('noopener');
   });
+
+  it('should invite conversation without presenting an active job search', () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
+
+    const contactText = (fixture.nativeElement as HTMLElement)
+      .querySelector('#contacto')
+      ?.textContent?.toLowerCase();
+    const heroContactAction = (fixture.nativeElement as HTMLElement)
+      .querySelector<HTMLAnchorElement>('a[href="#contacto"]');
+
+    expect(contactText).toContain('intercambiar ideas');
+    expect(contactText).not.toContain('oportunidades profesionales');
+    expect(contactText).not.toContain('freelance');
+    expect(heroContactAction?.textContent?.trim()).toBe('Escríbeme');
+  });
 });
